@@ -5,7 +5,7 @@ GPIODIR=/sys/class/gpio
 BOARD="original"
 
 disable_capemgr_load=$(grep -c bone_capemgr.uboot_capemgr_enabled=1 /proc/cmdline)
-machine=$(cat /proc/device-tree/model | sed "s/ /_/g" | tr -d '\000')
+machine=$(sed "s/ /_/g;s/\o0//g" /proc/device-tree/model)
 case "${machine}" in
 TI_AM335x_BeagleBone_Blue)
 	#overlays built-in, no slots file...
@@ -1201,7 +1201,7 @@ listmodes () {
 	eval MODES="\$${PIN}_PINMUX"
 	eval INFO="\$${PIN}_INFO"
 	if [ -z "$MODES" ] ; then
-		echo_err "Pin is not modifyable: $1 $INFO"
+		echo_err "Pin is not modifiable: $1 $INFO"
 		exit 1
 	else
 		echo "$MODES"
@@ -1412,7 +1412,7 @@ config_pin () {
 			;;
 
 		# GPIO with pull-down enabled
-		[iI][nN]-|[iI][nN][pP][uU][tT]-|[iI][nN][-_][pP][dD]|[iI][nN][pP][dD][tT][-_][pP][dD])
+		[iI][nN]-|[iI][nN][pP][uU][tT]-|[iI][nN][-_][pP][dD]|[iI][nN][pP][uU][tT][-_][pP][dD])
 			MODE=gpio_pd;
 			DIR=in
 			;;
