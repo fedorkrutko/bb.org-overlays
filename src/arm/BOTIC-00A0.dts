@@ -153,15 +153,11 @@
 	fragment@4 {
 		target = <&mcasp0>;
 		__overlay__ {
-			status = "okay";
-			op-mode = <0>;          /* MCASP_IIS_MODE */
-			tdm-slots = <2>;
 			serial-dir = <  /* 0: INACTIVE, 1: TX, 2: RX */
 				1 1 1 1
 			>;
-			tx-num-evt = <16>;
-			rx-num-evt = <1>;
-			pinctrl-names = "default";
+			tx-num-evt = <32>;
+			rx-num-evt = <32>;
 			pinctrl-0 = <&mcasp0_custom_pins>;
 		};
 	};
