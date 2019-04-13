@@ -61,7 +61,7 @@
 		};
 	};
 
-	fragment@2 {
+	fragment@1 {
 		target = <&cpu0_opp_table>;
 		__overlay__ {
 			oppnitro-1000000000 {
@@ -71,7 +71,7 @@
 	};
 	
 
-	fragment@3 {
+	fragment@2 {
 		target = <&am33xx_pinmux>;
 		__overlay__ {
 			botic_cape_pins: botic_cape_pins {
@@ -116,7 +116,7 @@
 		};
 	};
 
-	fragment@4 {
+	fragment@3 {
 		target-path="/";
 
 		__overlay__ {
@@ -146,7 +146,7 @@
 	};
 	
 	/* (Hermes-BBB) The I2C1 for isolated I2C access. */
-	fragment@5 {
+	fragment@4 {
 		target = <&i2c1>;
 		__overlay__ {
 			#address-cells = <1>;
@@ -159,7 +159,7 @@
 	};
 	
 	/* Enable McASP. Default parameters can be changed during run-time. */
-	fragment@6 {
+	fragment@5 {
 		target = <&mcasp0>;
 		__overlay__ {
 			serial-dir = <  /* 0: INACTIVE, 1: TX, 2: RX */
