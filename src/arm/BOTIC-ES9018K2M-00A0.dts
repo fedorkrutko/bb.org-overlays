@@ -149,7 +149,7 @@
 			pinctrl-names = "default";
 			pinctrl-0 = <&i2c1_pins>;
 			es9018k2m: es9018k2m@48 {
-				compatible = "es9018k2m";
+				compatible = "ess,es9018k2m";
 				reg = <0x48>;
 				status = "okay";
 			};
