@@ -13,7 +13,7 @@
 #include <dt-bindings/pinctrl/am33xx.h>
 
 / {
-	compatible = "ti,am335x-bone-black-wireless", "ti,am335x-bone-black", "ti,am335x-bone", "ti,am33xx", "ti,am335x-sancloud-bbe";
+	compatible = "sancloud,am335x-boneenhanced", "ti,am335x-bone-black-wireless", "ti,am335x-bone-black", "ti,am335x-bone", "ti,am33xx";
 
 	/* identification */
 	part-number = "BOTIC";
